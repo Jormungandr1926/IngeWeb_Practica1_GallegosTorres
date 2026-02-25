@@ -3,21 +3,41 @@
 para que sea mas sencillo identificarlos
 Ya si queremos cambialor solo lo cambiamos directamente de aqui y no estar buscando linea por linea*/
 :root{
-  --bg: #F5F7FB; /*background*/
+
+  /* Esto es para el tema claro*/
+  /*Utilize la pagina de adobe color para sacar una triada de colores*/
+  --bg: #F4F1EC; /*background*/
   --surface: #FFFFFF; /*superficie*/
-  --text: #0F172A; /*Texto principal*/
-  --text-muted: #64748B; /*texto secundario*/
-  --border: #E2E8F0; /*bordes*/
+  --text: #4a4f53; /*Texto principal*/
+  --text-muted: #deebed; /*texto secundario*/
+  --border: #e7e9eb; /*bordes*/
 
-  --brand: #3400A3; /*color de fondo del título o header*/
-  --brand-2: #4200d1; /*segunda tonalidad del fondo*/
-  --nav: #0B1220; /*Para el menu*/
+  --brand: #1b3a4c; /*color de fondo del título o header*/
+  --brand-2: #27547d; /*segunda tonalidad del fondo*/
+  --nav: #1b3a4c; /*Para el menu*/
 
-  --accent: #10B981; /*Esto es para el hover*/
-  --accent-2: #059669;
+  --accent: #CBAF68;  /*color secuandario para realtar cosas importantes */
+  --accent-2: #D2BE82;
 }
 
-styles.css
+body.dark {
+
+  /*Esto es el color para el modo oscuro*/
+  --bg: #0B0F14;
+  --surface: #111A22;
+  --text: #E7EDF2;
+  --text-muted: #A9B4BE;
+  --border: #243241;
+
+  --brand: #132B3A;
+  --brand-2: #1F4E73;
+  --nav: #1A1C12;
+
+  --accent: #CBAF68;
+  --accent-2: #D2BE82;
+}
+
+style.css
 * {
     box-sizing: border-box;
     margin: 0;
@@ -26,10 +46,12 @@ styles.css
 
 /* Estilos generales */
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    background-color: var(--bg);
-    color: var(--text);
+  display: flex;
+  flex-direction: column;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: var(--bg);
+  color: var(--text);
 }
  
 /* Header */
@@ -54,39 +76,61 @@ header {
     padding: 0 20px; /* padding lateral del container */
 }
  
-/* Sidebar (menu hamburguesa) */
+/* Contenedor del menú (antes "sidebar") */
 .sidebar {
-    background-color: var(--nav);
-    color: var(--surface);
-    width: auto;
-    padding: 10px 16px;
-    border-radius: 8px;
+  background-color: var(--nav);
+  color: var(--surface);
+  width: 100%;                /* ocupa el ancho disponible */
+  padding: 10px 16px;
+  border-radius: 8px;
+
+  /* Opcional: que el fondo y el radio se vea como barra */
+  display: flex;
 }
 
+/* La lista se vuelve una fila horizontal */
 .sidebar ul {
-    width: 100%;
-	text-align: left;
+  display: flex;              /* clave: horizontal */
+  flex-wrap: wrap;            /* permite que brinque a otra línea si no cabe */
+  gap: 8px;                   /* espacio entre botones (en lugar de margin) */
+  align-items: center;        /* centrado vertical */
+  justify-content: flex-start;/* puedes usar center o space-between según prefieras */
+  padding: 0;
+  margin: 0;
+  list-style: none;
 }
- 
+
+/* Eliminamos márgenes/estilos verticales del li */
 .sidebar ul li {
-	margin: 0 auto;
-	padding: 0;
-	list-style: none
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
- 
+
+/* Los enlaces ahora son botones horizontales */
 .sidebar ul li a {
-  line-height: 45px;
+  display: block;             /* botón clickeable completo */
+  padding: 0 14px;
+  line-height: 40px;          /* alto del botón */
   color: var(--surface);
   text-decoration: none;
-  display: block;                 /*hace que el enlace ocupe todo el espacio del boton*/  
-  padding: 0px 14px;              /* área clickeable */
-  border-radius: 6px;               /* redondea esuinas*/
+  border-radius: 6px;
   font-size: 16px;
+
+  /* Opcional: fondo al hover para mayor contraste */
+  transition: background-color .2s ease, color .2s ease;
 }
 
- 
-.sidebar ul li a:hover {
-    text-decoration: underline;
+.sidebar ul li a:hover,
+.sidebar ul li a:focus-visible {
+  background-color: color-mix(in srgb, var(--surface) 14%, transparent);
+  text-decoration: none;      /* quita subrayado si no lo quieres */
+}
+
+/* Estado activo (opcional) */
+.sidebar ul li a.active {
+  background-color: color-mix(in srgb, var(--surface) 24%, transparent);
+  font-weight: 600;
 }
  
 /* Contenido principal */
@@ -103,9 +147,9 @@ footer {
     background-color: var(--brand-2);
     color: var(--surface);
     text-align: center;
-    padding: 15px;
+    padding: 14px;
     border-top: 4px solid var(--nav);
-    margin-top: 20px;
+    margin-top: auto;
 }
  
 
@@ -171,6 +215,7 @@ a:hover{
   /* Tu layout ya usa flex. Aquí solo hacemos la galería de 2 columnas */
   .galeria { grid-template-columns: repeat(2, 1fr); }
 }
+
 @media (max-width: 640px) {
   .container { 
     /* Para pantallas pequeñas, apilamos sidebar y content */
@@ -179,3 +224,37 @@ a:hover{
   .sidebar { width: 100%; }
   .galeria { grid-template-columns: 1fr; }
 }
+
+
+
+.btn-theme{
+  margin-left: auto;                         /* empuja a la derecha */
+  appearance: none;
+  border: 1px solid color-mix(in srgb, #fff 35%, transparent);
+  background: transparent;
+  color: #e6ecef;
+  border-radius: 8px;
+  padding: 8px 12px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: background-color .2s ease, border-color .2s ease, color .2s ease;
+}
+
+/* Icono según estado (usa aria-pressed) */
+.btn-theme::before{
+  content: "🌙";            /* por defecto (modo claro: mostrar luna) */
+  font-size: 1rem;
+}
+.btn-theme[aria-pressed="true"]::before{
+  content: "☀️";           /* cuando está activo el modo oscuro */
+}
+
+.btn-theme:hover{
+  background: rgba(255,255,255,.12);
+  border-color: color-mix(in srgb, #fff 50%, transparent);
+}
+
+
+

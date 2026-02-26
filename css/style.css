@@ -9,11 +9,7 @@ Ya si queremos cambialor solo lo cambiamos directamente de aqui y no estar busca
   --bg: #F4F1EC; /*background*/
   --surface: #FFFFFF; /*superficie*/
   --text: #4a4f53; /*Texto principal*/
-<<<<<<< HEAD
-  --text-muted: #6b7a86; /*texto secundario*/
-=======
   --text-muted: #6b7a86 ; /*texto secundario*/
->>>>>>> Scarlett
   --border: #e7e9eb; /*bordes*/
 
   --brand: #1b3a4c; /*color de fondo del título o header*/
@@ -24,10 +20,6 @@ Ya si queremos cambialor solo lo cambiamos directamente de aqui y no estar busca
   --accent-2: #D2BE82;
 }
 
-<<<<<<< HEAD
-html[data-theme="dark"]{  
-=======
->>>>>>> Scarlett
 
 
 style.css
@@ -39,11 +31,7 @@ style.css
 
 /* Estilos generales */
 body {
-<<<<<<< HEAD
-  
-=======
   min-height: 100svh;
->>>>>>> Scarlett
   display: flex;
   flex-direction: column;
   font-family: Arial, sans-serif;
@@ -52,15 +40,9 @@ body {
   color: var(--text);
 }
 
-<<<<<<< HEAD
-main{
-  flex: 1; /* para que el main ocupe el espacio disponible entre header y footer */
-}
-=======
 main {
   flex: 1; /* para que main ocupe el espacio restante entre header y footer */
 } 
->>>>>>> Scarlett
  
 /* Header */
 header {
@@ -72,12 +54,7 @@ header {
     margin-bottom: 20px;
     display: flex;
     align-items: center;
-<<<<<<< HEAD
-    justify-content: space-between; /* centra el h1 */
-    position: relative;
-=======
     justify-content: space-between;
->>>>>>> Scarlett
     gap: 12px;
 }
 
@@ -254,29 +231,6 @@ a:hover{
 
 
 
-<<<<<<< HEAD
-.btn-theme{
-  margin: 0;
-  appearance: none;
-  border: 1px solid color-mix(in srgb, #fff 35%, transparent);
-  background: transparent;
-  color: #e6ecef;
-  border-radius: 8px;
-  padding: 8px 12px;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  transition: background-color .2s ease, border-color .2s ease, color .2s ease;
-}
-
-.btn-theme::before{
-  content: "🌙";           /* por defecto, modo claro: mostrar luna */
-  font-size: 1rem;
-}
-html[data-theme="dark"] .btn-theme::before{
-  content: "☀️";           /* en modo oscuro mostrar sol */
-=======
 
 .theme-toggle{ display:inline-flex; align-items:center; gap:10px; }
 .theme-toggle input{ position:absolute; opacity:0; width:1px; height:1px; }
@@ -320,7 +274,6 @@ html[data-theme="dark"] .btn-theme::before{
 
   /* sombra un poco más marcada en oscuro */
   --shadow: 0 4px 18px rgba(0,0,0,0.35);
->>>>>>> Scarlett
 }
 
 

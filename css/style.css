@@ -9,7 +9,7 @@ Ya si queremos cambialor solo lo cambiamos directamente de aqui y no estar busca
   --bg: #F4F1EC; /*background*/
   --surface: #FFFFFF; /*superficie*/
   --text: #4a4f53; /*Texto principal*/
-  --text-muted: #deebed; /*texto secundario*/
+  --text-muted: #6b7a86 ; /*texto secundario*/
   --border: #e7e9eb; /*bordes*/
 
   --brand: #1b3a4c; /*color de fondo del título o header*/
@@ -20,22 +20,7 @@ Ya si queremos cambialor solo lo cambiamos directamente de aqui y no estar busca
   --accent-2: #D2BE82;
 }
 
-body.dark {
 
-  /*Esto es el color para el modo oscuro*/
-  --bg: #0B0F14;
-  --surface: #111A22;
-  --text: #E7EDF2;
-  --text-muted: #A9B4BE;
-  --border: #243241;
-
-  --brand: #132B3A;
-  --brand-2: #1F4E73;
-  --nav: #1A1C12;
-
-  --accent: #CBAF68;
-  --accent-2: #D2BE82;
-}
 
 style.css
 * {
@@ -46,6 +31,7 @@ style.css
 
 /* Estilos generales */
 body {
+  min-height: 100svh;
   display: flex;
   flex-direction: column;
   font-family: Arial, sans-serif;
@@ -53,6 +39,10 @@ body {
   background-color: var(--bg);
   color: var(--text);
 }
+
+main {
+  flex: 1; /* para que main ocupe el espacio restante entre header y footer */
+} 
  
 /* Header */
 header {
@@ -64,16 +54,22 @@ header {
     margin-bottom: 20px;
     display: flex;
     align-items: center;
-    justify-content: center; /* centra el h1 */
-    position: relative;
+    justify-content: space-between;
     gap: 12px;
 }
+
+
+header h1 {
+  font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+  font-weight: 700;
+}
+
  
 /* Contenedor principal */
 .container {
     display: flex; /* Flexbox para sidebar y contenido */
     gap: 12px; /* espacio entre sidebar y content */
-    padding: 0 20px; /* padding lateral del container */
+    padding: 20px; /* padding lateral del container */
 }
  
 /* Contenedor del menú (antes "sidebar") */
@@ -140,6 +136,9 @@ header {
     padding: 22px;
     border: 2px solid var(--border);
     border-radius: 12px;
+    max-width: 1100px;        /* límite agradable en desktop */
+    margin-inline: auto;      /* centra horizontalmente */
+
 }
  
 /* Footer */
@@ -162,18 +161,24 @@ a:hover{
 /* Contenedor de la galería: grid de 3 columnas en desktop */
 .galeria {
   margin-top: 16px;
+  max-width: 1100px;
+  margin-inline: auto; /* centra la galería */
+
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 16px; /* separación entre tarjetas */
+  justify-content: center;
 }
 
 /* Tarjeta (aplica Box Model: border, padding, margin, sombra) */
 .card {
+  display: block;
   background-color: var(--surface);
   border: 2px solid var(--border);
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 2px 10px rgba(0,0,0,0.08); /*permite agregarle efectos de sombra al borde o dimensión*/
+  color: inherit; /*hereda el color del texto del contenedor padre*/
 }
 
 /* Imagen dentro de la tarjeta */
@@ -226,34 +231,104 @@ a:hover{
 
 
 
-.btn-theme{
-  margin-left: auto;                         /* empuja a la derecha */
-  appearance: none;
-  border: 1px solid color-mix(in srgb, #fff 35%, transparent);
-  background: transparent;
-  color: #e6ecef;
-  border-radius: 8px;
-  padding: 8px 12px;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  transition: background-color .2s ease, border-color .2s ease, color .2s ease;
+
+
+.theme-toggle{ display:inline-flex; align-items:center; gap:10px; }
+.theme-toggle input{ position:absolute; opacity:0; width:1px; height:1px; }
+.toggle-label{
+  display:inline-flex; align-items:center; gap:8px; color: var(--surface);
+  cursor:pointer; user-select:none;
+}
+.toggle-pill{
+  --h:24px; --w:44px;
+  position:relative; width:var(--w); height:var(--h);
+  background: rgba(255,255,255,.2);
+  border:1px solid rgba(255,255,255,.35);
+  border-radius:999px; padding:2px;
+}
+.toggle-thumb{
+  width: calc(var(--h) - 4px); height: calc(var(--h) - 4px);
+  background:#fff; border-radius:50%;
+  transform: translateX(0);
+  transition: transform .2s ease;
+}
+#darkmode-toggle:checked + .toggle-label .toggle-thumb{
+  transform: translateX(calc(var(--w) - var(--h)));
 }
 
-/* Icono según estado (usa aria-pressed) */
-.btn-theme::before{
-  content: "🌙";            /* por defecto (modo claro: mostrar luna) */
-  font-size: 1rem;
-}
-.btn-theme[aria-pressed="true"]::before{
-  content: "☀️";           /* cuando está activo el modo oscuro */
+:root:has(#darkmode-toggle:checked){
+
+  /*Esto es el color para el modo oscuro*/
+
+  --bg: #0E141B;
+  --surface: #15202B;
+  --text: #E6EDF3;
+  --text-muted: #A7B3BD;
+  --border: #22303C;
+
+  --brand: #143A52;   /* header */
+  --brand-2: #1F5A7A; /* footer */
+  --nav: #143A52;     /* barra */
+
+  --accent: #CBAF68;
+  --accent-2: #D2BE82;
+
+  /* sombra un poco más marcada en oscuro */
+  --shadow: 0 4px 18px rgba(0,0,0,0.35);
 }
 
-.btn-theme:hover{
-  background: rgba(255,255,255,.12);
-  border-color: color-mix(in srgb, #fff 50%, transparent);
+
+/* ===== Contraste del header y nav (solo texto) ===== */
+:root:has(#darkmode-toggle:checked) header{
+  color: #E6EDF3; /* texto claro sobre brand oscuro */
 }
+:root:has(#darkmode-toggle:checked) .sidebar,
+:root:has(#darkmode-toggle:checked) .sidebar a{
+  color: #E6EDF3; /* texto claro en nav y enlaces */
+}
+
+/* Hover del nav más sutil en oscuro */
+:root:has(#darkmode-toggle:checked) .sidebar ul li a:hover,
+:root:has(#darkmode-toggle:checked) .sidebar ul li a:focus-visible{
+  background-color: rgba(230, 237, 243, 0.14); /* 14% del texto */
+}
+:root:has(#darkmode-toggle:checked) .sidebar ul li a.active{
+  background-color: rgba(230, 237, 243, 0.22);
+}
+
+/* ===== Tarjeta más limpia en oscuro ===== */
+:root:has(#darkmode-toggle:checked) .card{
+  background-color: var(--surface);
+  border-color: var(--border);
+  box-shadow: var(--shadow);
+}
+
+/* Si notas que el área del figcaption se funde con la imagen,
+   dale una ligera banda para separar visualmente: */
+:root:has(#darkmode-toggle:checked) .card figcaption{
+  background: color-mix(in srgb, var(--surface) 94%, transparent);
+}
+
+/* (Opcional) redondeos y borde del contenedor principal en oscuro */
+:root:has(#darkmode-toggle:checked) .content{
+  background: var(--surface);
+  border-color: var(--border);
+}
+
+/* Toggle del tema que herede el color del header */
+:root:has(#darkmode-toggle:checked) .toggle-label{
+  color: inherit;
+}
+
+
+:root:has(#darkmode-toggle:checked) footer{
+  background-color: var(--surface);
+  color: var(--text);
+  border-top-color: var(--border);
+}
+
+
+
 
 
 

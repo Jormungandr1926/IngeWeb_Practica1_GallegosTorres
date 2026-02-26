@@ -190,11 +190,11 @@ a:hover{
 
 /* Texto de la tarjeta */
 .card figcaption {
-  padding: 12px; /* padding aplicado (Box Model) */
+  padding: 16px; /* padding aplicado (Box Model) */
 }
 
 .card h4 {
-  margin-bottom: 6px; 
+  margin-bottom: 8px; 
   font-size: 1rem;
   color: var(--text);
 }
@@ -226,6 +226,25 @@ a:hover{
   }
   .sidebar { width: 100%; }
   .galeria { grid-template-columns: 1fr; }
+}
+
+/*Para el boton de CV*/
+.btn-cv{
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 14px;
+  background-color: var(--brand);
+  color: #1b1b1b;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: background-color .2s ease, transform .2s ease;
+}
+
+.btn-cv:hover{
+  background-color: var(--accent-2);
+  transform: translateY(-1px);
 }
 
 

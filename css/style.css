@@ -9,7 +9,11 @@ Ya si queremos cambialor solo lo cambiamos directamente de aqui y no estar busca
   --bg: #F4F1EC; /*background*/
   --surface: #FFFFFF; /*superficie*/
   --text: #4a4f53; /*Texto principal*/
+<<<<<<< HEAD
   --text-muted: #6b7a86; /*texto secundario*/
+=======
+  --text-muted: #6b7a86 ; /*texto secundario*/
+>>>>>>> Scarlett
   --border: #e7e9eb; /*bordes*/
 
   --brand: #1b3a4c; /*color de fondo del título o header*/
@@ -20,22 +24,11 @@ Ya si queremos cambialor solo lo cambiamos directamente de aqui y no estar busca
   --accent-2: #D2BE82;
 }
 
+<<<<<<< HEAD
 html[data-theme="dark"]{  
+=======
+>>>>>>> Scarlett
 
-  /*Esto es el color para el modo oscuro*/
-  --bg: #0B0F14;
-  --surface: #111A22;
-  --text: #E7EDF2;
-  --text-muted: #A9B4BE;
-  --border: #243241;
-
-  --brand: #132B3A;
-  --brand-2: #1F4E73;
-  --nav: #1A1C12;
-
-  --accent: #CBAF68;
-  --accent-2: #D2BE82;
-}
 
 style.css
 * {
@@ -46,7 +39,11 @@ style.css
 
 /* Estilos generales */
 body {
+<<<<<<< HEAD
   
+=======
+  min-height: 100svh;
+>>>>>>> Scarlett
   display: flex;
   flex-direction: column;
   font-family: Arial, sans-serif;
@@ -55,9 +52,15 @@ body {
   color: var(--text);
 }
 
+<<<<<<< HEAD
 main{
   flex: 1; /* para que el main ocupe el espacio disponible entre header y footer */
 }
+=======
+main {
+  flex: 1; /* para que main ocupe el espacio restante entre header y footer */
+} 
+>>>>>>> Scarlett
  
 /* Header */
 header {
@@ -69,8 +72,12 @@ header {
     margin-bottom: 20px;
     display: flex;
     align-items: center;
+<<<<<<< HEAD
     justify-content: space-between; /* centra el h1 */
     position: relative;
+=======
+    justify-content: space-between;
+>>>>>>> Scarlett
     gap: 12px;
 }
 
@@ -152,6 +159,9 @@ header h1 {
     padding: 22px;
     border: 2px solid var(--border);
     border-radius: 12px;
+    max-width: 1100px;        /* límite agradable en desktop */
+    margin-inline: auto;      /* centra horizontalmente */
+
 }
  
 /* Footer */
@@ -173,18 +183,24 @@ a:hover{
 /* Contenedor de la galería: grid de 3 columnas en desktop */
 .galeria {
   margin-top: 16px;
+  max-width: 1100px;
+  margin-inline: auto; /* centra la galería */
+
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 16px; /* separación entre tarjetas */
+  justify-content: center;
 }
 
 /* Tarjeta (aplica Box Model: border, padding, margin, sombra) */
 .card {
+  display: block;
   background-color: var(--surface);
   border: 2px solid var(--border);
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 2px 10px rgba(0,0,0,0.08); /*permite agregarle efectos de sombra al borde o dimensión*/
+  color: inherit; /*hereda el color del texto del contenedor padre*/
 }
 
 /* Imagen dentro de la tarjeta */
@@ -238,6 +254,7 @@ a:hover{
 
 
 
+<<<<<<< HEAD
 .btn-theme{
   margin: 0;
   appearance: none;
@@ -259,12 +276,105 @@ a:hover{
 }
 html[data-theme="dark"] .btn-theme::before{
   content: "☀️";           /* en modo oscuro mostrar sol */
+=======
+
+.theme-toggle{ display:inline-flex; align-items:center; gap:10px; }
+.theme-toggle input{ position:absolute; opacity:0; width:1px; height:1px; }
+.toggle-label{
+  display:inline-flex; align-items:center; gap:8px; color: var(--surface);
+  cursor:pointer; user-select:none;
+}
+.toggle-pill{
+  --h:24px; --w:44px;
+  position:relative; width:var(--w); height:var(--h);
+  background: rgba(255,255,255,.2);
+  border:1px solid rgba(255,255,255,.35);
+  border-radius:999px; padding:2px;
+}
+.toggle-thumb{
+  width: calc(var(--h) - 4px); height: calc(var(--h) - 4px);
+  background:#fff; border-radius:50%;
+  transform: translateX(0);
+  transition: transform .2s ease;
+}
+#darkmode-toggle:checked + .toggle-label .toggle-thumb{
+  transform: translateX(calc(var(--w) - var(--h)));
 }
 
-.btn-theme:hover{
-  background: rgba(255,255,255,.12);
-  border-color: color-mix(in srgb, #fff 50%, transparent);
+:root:has(#darkmode-toggle:checked){
+
+  /*Esto es el color para el modo oscuro*/
+
+  --bg: #0E141B;
+  --surface: #15202B;
+  --text: #E6EDF3;
+  --text-muted: #A7B3BD;
+  --border: #22303C;
+
+  --brand: #143A52;   /* header */
+  --brand-2: #1F5A7A; /* footer */
+  --nav: #143A52;     /* barra */
+
+  --accent: #CBAF68;
+  --accent-2: #D2BE82;
+
+  /* sombra un poco más marcada en oscuro */
+  --shadow: 0 4px 18px rgba(0,0,0,0.35);
+>>>>>>> Scarlett
 }
+
+
+/* ===== Contraste del header y nav (solo texto) ===== */
+:root:has(#darkmode-toggle:checked) header{
+  color: #E6EDF3; /* texto claro sobre brand oscuro */
+}
+:root:has(#darkmode-toggle:checked) .sidebar,
+:root:has(#darkmode-toggle:checked) .sidebar a{
+  color: #E6EDF3; /* texto claro en nav y enlaces */
+}
+
+/* Hover del nav más sutil en oscuro */
+:root:has(#darkmode-toggle:checked) .sidebar ul li a:hover,
+:root:has(#darkmode-toggle:checked) .sidebar ul li a:focus-visible{
+  background-color: rgba(230, 237, 243, 0.14); /* 14% del texto */
+}
+:root:has(#darkmode-toggle:checked) .sidebar ul li a.active{
+  background-color: rgba(230, 237, 243, 0.22);
+}
+
+/* ===== Tarjeta más limpia en oscuro ===== */
+:root:has(#darkmode-toggle:checked) .card{
+  background-color: var(--surface);
+  border-color: var(--border);
+  box-shadow: var(--shadow);
+}
+
+/* Si notas que el área del figcaption se funde con la imagen,
+   dale una ligera banda para separar visualmente: */
+:root:has(#darkmode-toggle:checked) .card figcaption{
+  background: color-mix(in srgb, var(--surface) 94%, transparent);
+}
+
+/* (Opcional) redondeos y borde del contenedor principal en oscuro */
+:root:has(#darkmode-toggle:checked) .content{
+  background: var(--surface);
+  border-color: var(--border);
+}
+
+/* Toggle del tema que herede el color del header */
+:root:has(#darkmode-toggle:checked) .toggle-label{
+  color: inherit;
+}
+
+
+:root:has(#darkmode-toggle:checked) footer{
+  background-color: var(--surface);
+  color: var(--text);
+  border-top-color: var(--border);
+}
+
+
+
 
 
 

@@ -1,52 +1,83 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About Us</title>
-        <link rel="stylesheet" href="css/reset.css">
-        <link rel="stylesheet" href="css/style.css">
-  </head>
 
-  <body>
-    <header>
-      <h1>About Us</h1>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
 
-      <div class="theme-toggle">
-        <input type="checkbox" id="darkmode-toggle" aria-label="Cambiar tema claro/oscuro">
-        <label for="darkmode-toggle" class="toggle-label">
-          <span aria-hidden="true">☀️</span>
-          <span class="toggle-pill" aria-hidden="true">
-            <span class="toggle-thumb" aria-hidden="true"></span>
-          </span>
-          <span aria-hidden="true">🌙</span>
-        </label>
-      </div>
-    </header>
+<body>
+  <header>
+    <h1>Our Team</h1>
 
-
-
-    <nav class="sidebar">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="aboutus.html">About Us</a></li>
-      </ul>
-    </nav>
-
-      <main class="content">
-        <h2>Developed by</h2>
-          <h3>Gallegos Lozano Karen Scarlett & Torres Villanueva Omar</h3>
-            <p>This first design corresponds to Practica No.1 of Web Engineering</p>
-        
-
-        <p>
-          
-        </p>
-      </main>
+    <div class="theme-toggle">
+      <input type="checkbox" id="darkmode-toggle" aria-label="Change theme Light/Dark">
+      <label for="darkmode-toggle" class="toggle-label">
+        <span aria-hidden="true">☀️</span>
+        <span class="toggle-pill" aria-hidden="true">
+          <span class="toggle-thumb" aria-hidden="true"></span>
+        </span>
+        <span aria-hidden="true">🌙</span>
+      </label>
     </div>
+  </header>
 
-    <footer>
-      <p>&copy; Practice 1 - Web Engineering</p>
-    </footer>
-  </body>
+
+
+  <nav class="sidebar">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="aboutus.html">About Us</a></li>
+    </ul>
+  </nav>
+
+  <main class="content">
+    <section class="intro">
+      <h2>Developed by</h2>
+      <h3>Gallegos Lozano Karen Scarlett & Torres Villanueva Omar</h3>
+      <p>This project is part of Practicum No. 1 for the Web Engineering course at UPIITA - IPN.</p>
+    </section>
+
+    <section class="galeria">
+      <article class="card">
+        <img src="img/scar.jpeg" alt="Karen Scarlett Gallegos Lozano">
+        <div class="profile-text">
+          <h3>Karen Scarlett Gallegos Lozano</h3>
+          <p>Telematics Engineering Student. Passionate about web architecture and collaborative software developtment.
+          </p>
+        </div>
+      </article>
+
+      <article class="profile-card">
+        <div class="profile-img">
+          <img src="img/omar.jpeg" alt="Omar Torres Villanueva">
+        </div>
+
+        <div class="profile-text">
+          <h3>Omar Torres Villanueva</h3>
+          <p>Telematics Engineering Student. Cybersecurity enthusiast with a focus on penetration testing and secure
+            network infrastructures.</p>
+        </div>
+      </article>
+
+    </section>
+  </main>
+  </div>
+
+  <footer>
+    <p>&copy; 2026 Practice 1 - Web Engineering | UPIITA - IPN</p>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById('darkmode-toggle');
+    toggle.addEventListener('click', () => {
+      const currentTheme = document.body.getAttribute('data-theme');
+      document.body.setAttribute('data-theme', currentTheme === 'dark' ? 'light' : 'dark');
+    });
+  </script>
+</body>
+
 </html>

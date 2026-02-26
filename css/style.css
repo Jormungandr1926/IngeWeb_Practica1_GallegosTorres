@@ -9,7 +9,7 @@ Ya si queremos cambialor solo lo cambiamos directamente de aqui y no estar busca
   --bg: #F4F1EC; /*background*/
   --surface: #FFFFFF; /*superficie*/
   --text: #4a4f53; /*Texto principal*/
-  --text-muted: #deebed; /*texto secundario*/
+  --text-muted: #6b7a86; /*texto secundario*/
   --border: #e7e9eb; /*bordes*/
 
   --brand: #1b3a4c; /*color de fondo del título o header*/
@@ -20,7 +20,7 @@ Ya si queremos cambialor solo lo cambiamos directamente de aqui y no estar busca
   --accent-2: #D2BE82;
 }
 
-body.dark {
+html[data-theme="dark"]{  
 
   /*Esto es el color para el modo oscuro*/
   --bg: #0B0F14;
@@ -46,6 +46,7 @@ style.css
 
 /* Estilos generales */
 body {
+  
   display: flex;
   flex-direction: column;
   font-family: Arial, sans-serif;
@@ -53,27 +54,38 @@ body {
   background-color: var(--bg);
   color: var(--text);
 }
+
+main{
+  flex: 1; /* para que el main ocupe el espacio disponible entre header y footer */
+}
  
 /* Header */
 header {
     background-color: var(--brand);
     color: var(--surface);
-    padding: 22px;
+    padding: 16px 20 px;
     text-align: center;
     border-bottom: 4px solid var(--nav);
     margin-bottom: 20px;
     display: flex;
     align-items: center;
-    justify-content: center; /* centra el h1 */
+    justify-content: space-between; /* centra el h1 */
     position: relative;
     gap: 12px;
 }
+
+
+header h1 {
+  font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+  font-weight: 700;
+}
+
  
 /* Contenedor principal */
 .container {
     display: flex; /* Flexbox para sidebar y contenido */
     gap: 12px; /* espacio entre sidebar y content */
-    padding: 0 20px; /* padding lateral del container */
+    padding: 20px; /* padding lateral del container */
 }
  
 /* Contenedor del menú (antes "sidebar") */
@@ -149,7 +161,6 @@ footer {
     text-align: center;
     padding: 14px;
     border-top: 4px solid var(--nav);
-    margin-top: auto;
 }
  
 
@@ -226,8 +237,9 @@ a:hover{
 
 
 
+
 .btn-theme{
-  margin-left: auto;                         /* empuja a la derecha */
+  margin: 0;
   appearance: none;
   border: 1px solid color-mix(in srgb, #fff 35%, transparent);
   background: transparent;
@@ -241,13 +253,12 @@ a:hover{
   transition: background-color .2s ease, border-color .2s ease, color .2s ease;
 }
 
-/* Icono según estado (usa aria-pressed) */
 .btn-theme::before{
-  content: "🌙";            /* por defecto (modo claro: mostrar luna) */
+  content: "🌙";           /* por defecto, modo claro: mostrar luna */
   font-size: 1rem;
 }
-.btn-theme[aria-pressed="true"]::before{
-  content: "☀️";           /* cuando está activo el modo oscuro */
+html[data-theme="dark"] .btn-theme::before{
+  content: "☀️";           /* en modo oscuro mostrar sol */
 }
 
 .btn-theme:hover{

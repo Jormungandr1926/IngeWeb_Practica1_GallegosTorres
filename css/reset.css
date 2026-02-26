@@ -1,70 +1,63 @@
-/* =========================================
-   RESET CSS BÁSICO
-   Elimina estilos por defecto del navegador
-   ========================================= */
- 
-/* Elimina márgenes y rellenos por defecto */
+/* ------------------------------------------------------
+   RESET CSS OPTIMIZADO PARA LAYOUT FLEX + VARIABLES CSS
+   No destruye el box-model ni flexbox (como pasa con otros)
+------------------------------------------------------- */
+
+/* Box model consistente */
 *,
-*::before,  /*son seudoclases que se identifican por modificar el comportamiento*/
+*::before,
 *::after {
+  box-sizing: border-box;
+}
+
+/* Elimina márgenes por defecto */
+html, body {
   margin: 0;
   padding: 0;
-  box-sizing: border-box; /*nos permite calcular el tamaño final de la caja*/
 }
- 
-/* Ajustes básicos del documento */
-html {
-  font-size: 16px;
-  line-height: 1.5;
+
+/* Asegura que html y body ocupen toda la pantalla (para sticky footer) */
+html, body {
+  height: 100%;
 }
- 
-/* Elimina estilos por defecto del body */
-body {
-  font-family: sans-serif;
-  background-color: #fff;
-  color: #000;
-}
- 
-/* Elimina estilos de listas */
-ul,
-ol {
+
+/* Quita estilos feos de listas */
+ul, ol {
+  margin: 0;
+  padding: 0;
   list-style: none;
 }
- 
-/* Elimina subrayado y color por defecto en enlaces */
+
+/* Quita subrayado de enlaces por defecto, pero lo controlas en tu style.css */
 a {
   text-decoration: none;
   color: inherit;
 }
- 
-/* Normaliza imágenes */
-img,
-picture,
-video,
-canvas,
-svg {
-  display: block;
+
+/* Imágenes nunca se salen de su contenedor */
+img {
   max-width: 100%;
+  height: auto;
+  display: block;
 }
- 
-/* Elimina estilos por defecto en botones e inputs */
-button,
-input,
-textarea,
-select {
-  font: inherit;
+
+/* Evita estilos raros de botones */
+button {
   border: none;
   background: none;
-  outline: none;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  cursor: pointer;
 }
- 
-/* Evita que textarea cambie tamaño sin control */
-textarea {
-  resize: none;
+
+/* Quita estilos por defecto de h1/h2/h3… pero mantiene la jerarquía */
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  font-weight: inherit;
 }
- 
-/* Corrige comportamiento de tablas */
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
+
+/* Quita márgenes de párrafos */
+p {
+  margin: 0;
 }

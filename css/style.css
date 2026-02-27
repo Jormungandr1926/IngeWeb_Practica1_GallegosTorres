@@ -382,6 +382,214 @@ a:hover{
 
 
 
+/* MEJORA DE LA INTRODUCCIÓN */
+.intro-text {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 40px; /* Centrado y margen inferior */
+    padding: 20px;
+    border-bottom: 1px solid var(--border); /* Línea de separación */
+}
+
+.intro-text h2 {
+    font-size: 2rem;
+    color: var(--brand);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.intro-text p {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+}
+
+/* CARDS */
+/* Ajustamos el contenedor de información dentro de la card */
+.card figcaption {
+    display: flex; /* Mantenemos estructura de posicionamiento absoluto */
+    flex-direction: column;
+    justify-content: flex-end; /* Texto al fondo del panel */
+    padding: 20px;
+    background: linear-gradient(to top, rgba(21, 32, 43, 0.9) 0%, transparent 100%);
+}
+
+.card h4 {
+    color: var(--accent); /* color dorado para el título */
+    font-size: 1.4rem;
+    margin-bottom: 5px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.card figcaption p {
+    color: #ffffff; /* Texto blanco para legibilidad sobre el gradiente */
+    font-size: 0.95rem;
+    font-weight: 400;
+    line-height: 1.4;
+    opacity: 0.9;
+}
+
+
+:root:has(#darkmode-toggle:checked) .intro-text h2 {
+    color: var(--accent); /* En modo oscuro, el título resalta más en dorado */
+}
+
+:root:has(#darkmode-toggle:checked) .intro-text {
+    border-bottom-color: var(--accent); /* El detalle del 10% aplicado */
+}
 
 
 
+/* SKILLS BAR */
+.skills-bar {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 40px;
+    padding: 0 20px;
+}
+
+.skill-item {
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    padding: 8px 20px;
+    border-radius: 50px; /* Forma de píldora */
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text);
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow);
+}
+
+.skill-item:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    transform: translateY(-3px);
+}
+
+/* Modo oscuro para los items */
+:root:has(#darkmode-toggle:checked) .skill-item {
+    background-color: var(--brand);
+    border-color: var(--border);
+}
+
+
+/* ABOUT US */
+.team-grid {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.profile-preview {
+    flex: 1;
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease;
+}
+
+.profile-preview:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent);
+}
+
+.profile-header {
+    margin-bottom: 15px;
+    border-bottom: 2px solid var(--bg);
+    padding-bottom: 10px;
+}
+
+.profile-header h3 {
+    color: var(--brand);
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+/* Modo oscuro para los perfiles */
+:root:has(#darkmode-toggle:checked) .profile-preview {
+    background-color: var(--surface);
+    border-color: var(--border);
+}
+
+:root:has(#darkmode-toggle:checked) .profile-header h3 {
+    color: var(--accent);
+}
+
+/* CV PAGE - SIDEBARS & LAYOUT */
+.cv-layout {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.cv-aside {
+    flex: 0 0 150px; /* Ancho fijo para los laterales */
+    padding: 15px;
+    background-color: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 0.85rem;
+}
+
+/* Estilo para los indicadores de estatus */
+.status-list { list-style: none; padding: 0; }
+.status-list li { margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
+
+.dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+.green { background-color: #4CAF50; }
+.orange { background-color: #FF9800; }
+
+/* Estilo para mini tags */
+.mini-tags { display: flex; flex-wrap: wrap; gap: 5px; }
+.mini-tags span {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+}
+
+
+/* PROJECTS PAGE - SPECIAL STYLES */
+.project-header {
+    margin: 40px 0 20px;
+    padding-left: 20px;
+    border-left: 4px solid var(--accent);
+}
+
+.project-header h3 {
+    font-size: 1.6rem;
+    color: var(--brand);
+}
+
+.card-info-content {
+    padding: 25px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-info-content h4 {
+    color: var(--brand);
+    margin-bottom: 12px;
+}
+
+.skill-tag {
+    display: inline-block;
+    background-color: var(--bg);
+    border: 1px solid var(--border);
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    margin-top: 15px;
+    color: var(--brand);
+    font-family: 'Courier New', Courier, monospace;
+}

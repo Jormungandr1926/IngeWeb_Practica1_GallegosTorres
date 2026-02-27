@@ -1,53 +1,74 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About Us</title>
-        <link rel="stylesheet" href="css/reset.css">
-        <link rel="stylesheet" href="css/style.css">
-  </head>
 
-  <body>
-    <header>
-      <h1>About Us</h1>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
 
-      <div class="theme-toggle">
-        <input type="checkbox" id="darkmode-toggle" aria-label="Cambiar tema claro/oscuro">
-        <label for="darkmode-toggle" class="toggle-label">
-          <span aria-hidden="true">☀️</span>
-          <span class="toggle-pill" aria-hidden="true">
-            <span class="toggle-thumb" aria-hidden="true"></span>
-          </span>
-          <span aria-hidden="true">🌙</span>
-        </label>
-      </div>
-    </header>
+<body>
+  <header>
+    <h1>About Us</h1>
 
-
-
-    <nav class="sidebar">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="aboutus.html">About Us</a></li>
-      </ul>
-    </nav>
-
-      <main class="content">
-        <h2>About This Project</h2>
-        <p>
-          <strong>CV Manager</strong> is a web platform designed to organize and showcase
-          professional profiles built as part of Practice No. 1 for the Web Engineering
-          course at UPIITA — Telematics Engineering program.
-        </p>
-        <h3>Developed by</h3>
-        <p>Karen Scarlett Gallegos Lozano</p>
-        <p>Omar Torres Villanueva</p>
-      </main>
+    <div class="theme-toggle">
+      <input type="checkbox" id="darkmode-toggle" aria-label="Cambiar tema claro/oscuro">
+      <label for="darkmode-toggle" class="toggle-label">
+        <span aria-hidden="true">☀️</span>
+        <span class="toggle-pill" aria-hidden="true">
+          <span class="toggle-thumb" aria-hidden="true"></span>
+        </span>
+        <span aria-hidden="true">🌙</span>
+      </label>
     </div>
+  </header>
 
-    <footer>
-      <p>&copy; Practice 1 - Web Engineering</p>
-    </footer>
-  </body>
+
+
+  <nav class="sidebar">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="aboutus.html">About Us</a></li>
+    </ul>
+  </nav>
+
+  <main class="content">
+    <section class="intro-text">
+      <h2>About This Project</h2>
+      <p>
+        CV Manager is a specialized platform developed to manage professional identities
+        within the digital ecosystem. Built for the Web Engineering course at
+        UPIITA - IPN, this project integrates modern architectures
+        and adaptive design principles.
+      </p>
+    </section>
+
+    <section class="team-grid">
+      <article class="profile-preview">
+        <div class="profile-header">
+          <h3>Karen Scarlett Gallegos Lozano</h3>
+          <span class="badge">Telematics Engineer</span>
+        </div>
+        <p>Specialized in web architecture and collaborative systems design, focused on creating seamless user
+          experiences.</p>
+      </article>
+
+      <article class="profile-preview">
+        <div class="profile-header">
+          <h3>Omar Torres Villanueva</h3>
+          <span class="badge">Telematics Engineer</span>
+        </div>
+        <p>Focused on cybersecurity, network infrastructure, and the deep philosophical understanding of technological
+          impact.</p>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; Practice 1 - Web Engineering</p>
+  </footer>
+</body>
+
 </html>

@@ -1,50 +1,122 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Projects</title>
-        <link rel="stylesheet" href="css/reset.css">
-        <link rel="stylesheet" href="css/style.css">
-  </head>
 
-  <body>
-    <header>
-      <h1>Projects</h1>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
 
-      <div class="theme-toggle">
-        <input type="checkbox" id="darkmode-toggle" aria-label="Cambiar tema claro/oscuro">
-        <label for="darkmode-toggle" class="toggle-label">
-          <span aria-hidden="true">☀️</span>
-          <span class="toggle-pill" aria-hidden="true">
-            <span class="toggle-thumb" aria-hidden="true"></span>
-          </span>
-          <span aria-hidden="true">🌙</span>
-        </label>
-      </div>
-    </header>
+<body>
+  <header>
+    <h1>Projects</h1>
+
+    <div class="theme-toggle">
+      <input type="checkbox" id="darkmode-toggle" aria-label="Cambiar tema claro/oscuro">
+      <label for="darkmode-toggle" class="toggle-label">
+        <span aria-hidden="true">☀️</span>
+        <span class="toggle-pill" aria-hidden="true">
+          <span class="toggle-thumb" aria-hidden="true"></span>
+        </span>
+        <span aria-hidden="true">🌙</span>
+      </label>
+    </div>
+  </header>
 
 
-    <nav class="sidebar">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="aboutus.html">About Us</a></li>
-      </ul>
-    </nav>
+  <nav class="sidebar">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="aboutus.html">About Us</a></li>
+    </ul>
+  </nav>
 
-      <main class="content">
-        <h3>Get your Project uploaded</h3>
-            <p>This page contains the details of the projects done by our professionals</p>
-        
+  <main class="content">
+    <section class="intro-text">
+      <h3>Engineering Portfolio</h3>
+      <p>A showcase of technical solutions and academic research developed by our professionals.</p>
+    </section>
 
-        <p>
-          <a href="index.html">Return to Home</a>
-        </p>
-      </main>
+    <div class="project-header">
+      <span class="badge">Lead Engineer</span>
+      <h3>Omar Torres Villanueva</h3>
     </div>
 
-    <footer>
-      <p>&copy; Practice 1 - Web Engineering</p>
-    </footer>
-  </body>
+    <div class="galeria">
+      <article class="card">
+        <div class="card-info-content">
+          <h4>AI Librarian Agent</h4>
+          <p>Developed a RAG-based AI agent that acts as a specialized librarian, comparing AI behavior to structured
+            knowledge retrieval instead of destructive Skynet myths.</p>
+          <span class="skill-tag">LangChain</span> <span class="skill-tag">RAG</span>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-info-content">
+          <h4>Automated Penetration Testing</h4>
+          <p>Thesis project involving the integration of LangChain and LLMs to automate offensive security workflows and
+            vulnerability discovery.</p>
+          <span class="skill-tag">Python</span> <span class="skill-tag">Red Teaming</span>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-info-content">
+          <h4>Smart IDS System</h4>
+          <p>Implementation of an AI-driven Intrusion Detection System using neural networks to detect anomalous traffic
+            patterns in local area networks.</p>
+          <span class="skill-tag">Networking</span> <span class="skill-tag">ML</span>
+        </div>
+      </article>
+    </div>
+
+    <div class="project-header">
+      <span class="badge">Lead Engineer</span>
+      <h3>Karen Scarlett Gallegos Lozano</h3>
+    </div>
+
+    <div class="galeria">
+      <article class="card">
+        <div class="card-info-content">
+          <h4>MySQL Schema Migration</h4>
+          <p>Migrated CSV sheets into a optimized MySQL schema using catalogs and relational keys to improve data access
+            speed and storage efficiency.</p>
+          <span class="skill-tag">MySQL</span> <span class="skill-tag">Schema Design</span>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-info-content">
+          <h4>Inventory & Sales Analytics</h4>
+          <p>Built complex aggregation queries for sales and inventory summaries, ensuring period-over-period
+            consistency through normalized customer records.</p>
+          <span class="skill-tag">SQL</span> <span class="skill-tag">Aggregations</span>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-info-content">
+          <h4>AI-Driven Database Dev</h4>
+          <p>Used AI-assisted tooling (Copilot and ChatGPT) to accelerate MySQL CLI workflows, reducing schema drafting
+            time and improving script reliability.</p>
+          <span class="skill-tag">AI-Assisted</span> <span class="skill-tag">Workflows</span>
+        </div>
+      </article>
+    </div>
+
+    <p style="text-align: center; margin-top: 30px;">
+      <a href="index.html" class="btn-cv">Return to Home</a>
+    </p>
+  </main>
+
+  </div>
+
+  <footer>
+    <p>&copy; Practice 1 - Web Engineering</p>
+  </footer>
+</body>
+
 </html>

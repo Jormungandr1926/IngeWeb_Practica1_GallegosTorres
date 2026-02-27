@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>CV Manager</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CV Manager | Professional Portfolio</title>
 
-  <!-- tus CSS -->
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
@@ -14,55 +14,67 @@
   <header>
     <h1>Curriculum Vitae Managers</h1>
 
-    <!-- Toggle de tema SIN JS (tu markup adaptado) -->
-   
     <div class="theme-toggle">
-        <input type="checkbox" id="darkmode-toggle" aria-label="Cambiar tema claro/oscuro">
-        <label for="darkmode-toggle" class="toggle-label">
+      <input type="checkbox" id="darkmode-toggle" aria-label="Toggle light/dark theme">
+      <label for="darkmode-toggle" class="toggle-label">
         <span aria-hidden="true">☀️</span>
         <span class="toggle-pill" aria-hidden="true">
-            <span class="toggle-thumb" aria-hidden="true"></span>
+          <span class="toggle-thumb" aria-hidden="true"></span>
         </span>
         <span aria-hidden="true">🌙</span>
-        </label>
+      </label>
     </div>
-    </header>
+  </header>
 
+  <nav class="sidebar">
+    <ul>
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="aboutus.html">About Us</a></li>
+    </ul>
+  </nav>
 
-    <nav class="sidebar">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="aboutus.html">About Us</a></li>
-      </ul>
-    </nav>
+  <main class="content">
+    <section class="intro-text">
+      <h2>Global Talent Hub</h2>
+      <p>Welcome to our professional showcase. We are <strong>Telematics Engineering</strong> students at <strong>UPIITA
+          - IPN</strong>, dedicated to building the next generation of digital infrastructure and secure communications.
+      </p>
+    </section>
 
-    <main class="content">
-      <h2>Let's meet our professionals</h2>
-      <p>Students currently enrolled at UPIITA in Telematics Engineering</p>
+    <section class="skills-bar">
+      <div class="skill-item"><span>Networking</span></div>
+      <div class="skill-item"><span>Cybersecurity</span></div>
+      <div class="skill-item"><span>Web Engineering</span></div>
+      <div class="skill-item"><span>AI Solutions</span></div>
+      <div class="skill-item"><span>Cloud Computing</span></div>
+    </section>
 
-        <div class="galeria">
-            <figure class="card">
-            <a href="cvs.html">
-              <img src="img/CVs.png" alt="Icono de Cvs">
-            <figcaption>CVs</figcaption>
-            </a>  
-            </figure>
-    
-            <figure class="card">
-            <a href="projects.html" >
-              <img src="img/folder.png" alt="Icono de portafolio">
-            <figcaption>Projects</figcaption>
-            </a>
-            </figure>
-        </div>
+    <div class="galeria">
+      <figure class="card">
+        <a href="cvs.html">
+          <img src="img/CVs.png" alt="Professional Resumes">
+          <figcaption>
+            <h4>View Resumes</h4>
+            <p>Explore our academic background and technical expertise.</p>
+          </figcaption>
+        </a>
+      </figure>
 
-    </main>
-    
-   
-
+      <figure class="card">
+        <a href="projects.html">
+          <img src="img/folder.png" alt="Technical Projects">
+          <figcaption>
+            <h4>Project Portfolio</h4>
+            <p>From network architecture to AI-driven security solutions.</p>
+          </figcaption>
+        </a>
+      </figure>
+    </div>
+  </main>
 
   <footer>
-    <p>&copy; Practice 1 - Web Engineering</p>
+    <p>&copy; 2026 Practice 1 - Web Engineering | UPIITA - IPN</p>
   </footer>
 </body>
+
 </html>

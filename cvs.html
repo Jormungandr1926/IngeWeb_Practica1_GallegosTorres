@@ -1,66 +1,89 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CVs</title>
-        <link rel="stylesheet" href="css/reset.css">
-        <link rel="stylesheet" href="css/style.css">
-  </head>
 
-  <body>
-    <header>
-      <h1>CVs</h1>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CVs</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
 
-      <div class="theme-toggle">
-        <input type="checkbox" id="darkmode-toggle" aria-label="Cambiar tema claro/oscuro">
-        <label for="darkmode-toggle" class="toggle-label">
-          <span aria-hidden="true">☀️</span>
-          <span class="toggle-pill" aria-hidden="true">
-            <span class="toggle-thumb" aria-hidden="true"></span>
-          </span>
-          <span aria-hidden="true">🌙</span>
-        </label>
-      </div>
-    </header>
-    
-    <nav class="sidebar">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="aboutus.html">About Us</a></li>
-      </ul>
-    </nav>
-      <main class="content">
-        <h3>Get your CV uploaded</h3>
-            <p>This page contains the most recent CVs of our professionals</p>
-        
+<body>
+  <header>
+    <h1>CVs</h1>
+
+    <div class="theme-toggle">
+      <input type="checkbox" id="darkmode-toggle" aria-label="Cambiar tema claro/oscuro">
+      <label for="darkmode-toggle" class="toggle-label">
+        <span aria-hidden="true">☀️</span>
+        <span class="toggle-pill" aria-hidden="true">
+          <span class="toggle-thumb" aria-hidden="true"></span>
+        </span>
+        <span aria-hidden="true">🌙</span>
+      </label>
+    </div>
+  </header>
+
+  <nav class="sidebar">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="aboutus.html">About Us</a></li>
+    </ul>
+  </nav>
+  
+  <main class="content">
+    <section class="intro-text">
+      <h3>Professional Talent Pool</h3>
+      <p>Verified Telematics Engineering profiles from UPIITA - IPN</p>
+    </section>
+
+    <div class="cv-layout">
+      <aside class="cv-aside left">
+        <h4>Availability</h4>
+        <ul class="status-list">
+          <li><span class="dot green"></span> Open to Work</li>
+          <li><span class="dot orange"></span> Internship</li>
+        </ul>
+        </nav>
 
         <div class="galeria">
-            <figure class="card">
-             <a href="pdf/scarCV.pdf" target="_blank">
-            <img src="img/scar.jpeg" alt="Foto de perfil de Scarlett Gallegos">
-            <figcaption>
-            <h4>Karen Scarlett Gallegos Lozano</h4>
-            <p>Ingeniería en Telemática</p>
-            </figcaption>
+          <figure class="card">
+            <a href="pdf/scarCV.pdf" target="_blank">
+              <img src="img/scar.jpeg" alt="Scarlett Gallegos">
+              <figcaption>
+                <h4>Karen Scarlett Gallegos Lozano</h4>
+                <p>Telematics Engineering</p>
+              </figcaption>
             </a>
-            </figure>
-    
-            <figure class="card">
+          </figure>
+
+          <figure class="card">
             <a href="pdf/omarCV.pdf" target="_blank">
-            <img src="img/omar.jpeg" alt="Foto de perfil de Omar">
-            <figcaption>
-            <h4>Omar Torres Villanueva</h4>
-            <p>Ingeniería en Telemática</p>
-            </figcaption>
-          </a>   
-            </figure>
+              <img src="img/omar.jpeg" alt="Omar Torres">
+              <figcaption>
+                <h4>Omar Torres Villanueva</h4>
+                <p>Telematics Engineering</p>
+              </figcaption>
+            </a>
+          </figure>
         </div>
 
-    </main>
+        <aside class="cv-aside right">
+          <h4>Quick Skills</h4>
+          <div class="mini-tags">
+            <span>Python</span>
+            <span>Cisco</span>
+            <span>HTML/CSS</span>
+          </div>
+        </aside>
+      </aside>
+    </div>
+  </main>
 
-    <footer>
-      <p>&copy; Practice 1 - Web Engineering</p>
-    </footer>
-  </body>
+  <footer>
+    <p>&copy; Practice 1 - Web Engineering</p>
+  </footer>
+</body>
+
 </html>

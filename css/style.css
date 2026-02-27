@@ -207,7 +207,7 @@ a:hover{
 
 /* Texto de la tarjeta */
 .card figcaption {
-  padding: 20px; /* padding aplicado (Box Model) */
+  padding: 35px; /* padding aplicado (Box Model) */
   text-align: center;
   font-size: 1.1rem;
   font-weight: 600;

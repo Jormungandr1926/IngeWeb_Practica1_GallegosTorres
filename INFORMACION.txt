@@ -1,0 +1,7 @@
+Aquí se encuentra el código correspondiente a la práctica 1, elaborado por:
+Gallegos Lozano Karen scarlett
+Torres Villanueva Omar
+
+El enlace para las prácticas 2 y 3 con los integrantes Karen Scarlett y Omar es el siguiente:
+Practica 2 y 3:
+https://github.com/OmarTorres19/WebApp_TorresGallegosBazaldua.git
